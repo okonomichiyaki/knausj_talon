@@ -2,7 +2,7 @@ control mouse: user.mouse_toggle_control_mouse()
 zoom mouse: user.mouse_toggle_zoom_mouse()
 camera overlay: user.mouse_toggle_camera_overlay()
 run calibration: user.mouse_calibrate()	
-touch: 
+(click | touch):
 	mouse_click(0)
 	# close the mouse grid if open
 	user.grid_close()
@@ -12,7 +12,7 @@ righty:
 	# close the mouse grid if open
 	user.grid_close()
 
-midclick: 
+(middle | midclick):
 	mouse_click(2)
 	# close the mouse grid
 	user.grid_close()
