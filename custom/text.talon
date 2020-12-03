@@ -19,3 +19,5 @@ clear right <number_small> characters:
 inside singles:
 	insert("''")
 	key(left)
+
+trip: "t"
