@@ -21,3 +21,4 @@ inside singles:
 	key(left)
 
 trip: "t"
+blank: " "
