@@ -110,7 +110,7 @@ ctx.lists["self.modifier_key"] = {
     "command": "cmd",
     "control": "ctrl",  #'troll':   'ctrl',
     "option": "alt",
-    "shift": "shift",  #'sky':     'shift',
+    "shift": "shift",  'sky':     'shift',
     "super": "super",
 }
 alphabet = dict(zip(default_alphabet, letters_string))
