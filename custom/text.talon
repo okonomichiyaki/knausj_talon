@@ -22,3 +22,4 @@ inside singles:
 
 trip: "t"
 blank: " "
+ship: " "
