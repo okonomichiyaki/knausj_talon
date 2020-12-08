@@ -19,7 +19,7 @@ action(code.toggle_comment): user.idea("action CommentByLineComment")
 #talon edit actions
 action(edit.copy): user.idea("action EditorCopy")
 action(edit.cut): user.idea("action EditorCut")
-action(edit.delete): user.idea("action EditorBackSpace")
+#action(edit.delete): user.idea("action EditorBackSpace")
 action(edit.paste): user.idea("action EditorPaste")
 action(edit.find_next): user.idea("action FindNext")
 action(edit.find_previous): user.idea("action FindPrevious")
