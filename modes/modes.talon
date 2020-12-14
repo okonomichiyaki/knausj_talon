@@ -13,7 +13,7 @@ sleep all:
     user.mouse_sleep()
     speech.disable()
     user.engine_sleep()
-talon sleep:
+(snore | talon sleep):
     speech.disable()
     user.history_disable()
 talon wake:
