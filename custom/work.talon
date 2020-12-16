@@ -1,1 +1,1 @@
-dub corps: "WMSC"
+dub ticket <number>: "WMSC-{number}"
