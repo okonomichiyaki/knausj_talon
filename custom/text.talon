@@ -23,3 +23,4 @@ inside singles:
 trip: "t"
 blank: " "
 ship: " "
+slam: key(enter)
