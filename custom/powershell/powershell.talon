@@ -1,4 +1,5 @@
-os: windows
-app: powershell
+app.name: Windows PowerShell
+app.name: powershell.exe
 -
 tag(): terminal
+tag(): user.git
