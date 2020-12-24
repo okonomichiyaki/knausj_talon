@@ -12,6 +12,7 @@ faster: key(3)
 fastest: key(5)
 
 # camera
+reset: key(x)
 zoom: user.mouse_scroll_up_continuous()
 zoom out: user.mouse_scroll_down_continuous()
 up:
@@ -34,3 +35,9 @@ tick up: key(w)
 tick down: key(s)
 tick right: key(d)
 tick left: key(a)
+
+# modes
+scanner: key(f4)
+maintenance: key(f3)
+power: key(f2)
+traffic: key(f1)
