@@ -29,7 +29,7 @@ talon mode: user.talon_mode()
     mode.enable("dictation")
     user.code_clear_language_mode()
     mode.disable("user.gdb")
-^command mode$:
+^(the man mode | command mode)$:
     mode.disable("sleep")
     mode.disable("dictation")
     mode.enable("command")
