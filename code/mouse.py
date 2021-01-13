@@ -247,7 +247,17 @@ def show_cursor_helper(show):
         ctrl.cursor_visible(show)
 
 
+def throttle_off():
+    print("throttle off")
+    actions.speech.enable()
+
+def throttle_on():
+    print("throttle on")
+    actions.speech.disable()
+    cron.after("500ms", throttle_off)
+
 def on_pop(active):
+    throttle_on()
     if gaze_job or scroll_job:
         if setting_mouse_enable_pop_stops_scroll.get() >= 1:
             stop_scroll()
