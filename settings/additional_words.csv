@@ -23,7 +23,8 @@ WMSC,dub cores
 WMSC,dob cores
 WMSC,dub court
 localhost,local host
-http,had tip
+HTTP,had tip
+HTTP,hat tip
 json,ja on
 json,jason on
 LipSurf,lips surf
@@ -31,3 +32,10 @@ LipSurf,lip serf
 LipSurf,lip serve
 Wanikani,Juan connie
 Wanikani,one connie
+Spring Data REST,spring data arrest
+AMQP,am cue
+AMQP,am pu
+AMQP,am cup
+AMQP,a cup
+RabbitMQ,rabbit em cu
+JUnit,ja unit
