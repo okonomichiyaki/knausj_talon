@@ -16,6 +16,7 @@ track scans,tracks cans
 track scan,tracks can
 REST API,rest pi
 Rescache,red cast
+Rescache,rez cash
 autowired,otto wired
 username,use her name
 WMSC,dub corps
@@ -39,3 +40,8 @@ AMQP,am cup
 AMQP,a cup
 RabbitMQ,rabbit em cu
 JUnit,ja unit
+whallocator,warehouse allocator
+endpoints,end points
+endpoints,and points
+endpoint,end point
+endpoint,and point
