@@ -29,6 +29,8 @@ key = actions.key
 function_list = []
 library_list = []
 extension_lang_map = {
+    "kt": "kotlin",
+    "java": "java",
     "asm": "assembly",
     "bat": "batch",
     "c": "c",
