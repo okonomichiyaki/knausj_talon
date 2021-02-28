@@ -4,7 +4,7 @@ control mouse:
 zoom mouse:
 	user.mouse_enable_zoom_mouse()
 	user.mouse_disable_control_mouse()
-sleep mouse:
+snore mouse:
 	user.mouse_sleep()
 camera overlay: user.mouse_toggle_camera_overlay()
 run calibration: user.mouse_calibrate()	
