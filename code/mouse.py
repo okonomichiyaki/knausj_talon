@@ -93,6 +93,20 @@ def gui_wheel(gui: imgui.GUI):
 
 @mod.action_class
 class Actions:
+    def mouse_zoom():
+        """zoom"""
+        if gaze_job or scroll_job:
+            if setting_mouse_enable_pop_stops_scroll.get() >= 1:
+                stop_scroll()
+        elif (
+            not eye_zoom_mouse.zoom_mouse.enabled
+        #  and eye_mouse.mouse.attached_tracker is not None
+        ):
+            if setting_mouse_enable_pop_click.get() >= 1:
+                ctrl.mouse_click(button=0, hold=16000)
+        elif eye_zoom_mouse.zoom_mouse.enabled:
+            eye_zoom_mouse.zoom_mouse.on_pop(eye_zoom_mouse.zoom_mouse.state)
+
     def mouse_show_cursor():
         """Shows the cursor"""
         show_cursor_helper(True)
@@ -266,17 +280,7 @@ def show_cursor_helper(show):
 
 
 def on_pop(active):
-    if gaze_job or scroll_job:
-        if setting_mouse_enable_pop_stops_scroll.get() >= 1:
-            stop_scroll()
-    elif (
-        not eye_zoom_mouse.zoom_mouse.enabled
-      #  and eye_mouse.mouse.attached_tracker is not None
-    ):
-        if setting_mouse_enable_pop_click.get() >= 1:
-            ctrl.mouse_click(button=0, hold=16000)
-    elif eye_zoom_mouse.zoom_mouse.enabled:
-        eye_zoom_mouse.zoom_mouse.on_pop(eye_zoom_mouse.zoom_mouse.state)
+    actions.user.pop()
 
 noise.register("pop", on_pop)
 
