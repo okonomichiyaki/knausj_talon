@@ -105,6 +105,22 @@ def gui_wheel(gui: imgui.GUI):
 
 @mod.action_class
 class Actions:
+    def pop():
+        """Action that occurs on pop."""
+
+    def mouse_click_or_zoom():
+        """Trigger mouse click or trigger zoom mouse"""
+        if gaze_job or scroll_job:
+            if setting_mouse_enable_pop_stops_scroll.get() >= 1:
+                stop_scroll()
+        elif (
+            not eye_zoom_mouse.zoom_mouse.enabled
+        ):
+            if setting_mouse_enable_pop_click.get() >= 1:
+                ctrl.mouse_click(button=0, hold=16000)
+        elif eye_zoom_mouse.zoom_mouse.enabled:
+            eye_zoom_mouse.zoom_mouse.on_pop(eye_zoom_mouse.zoom_mouse.state)
+
     def mouse_show_cursor():
         """Shows the cursor"""
         show_cursor_helper(True)
@@ -128,6 +144,14 @@ class Actions:
         """Toggles control mouse"""
         toggle_control(not config.control_mouse)
 
+    def mouse_disable_control_mouse():
+        """Disable control mouse"""
+        toggle_control(False)
+
+    def mouse_enable_control_mouse():
+        """Enable control mouse"""
+        toggle_control(True)
+
     def mouse_toggle_camera_overlay():
         """Toggles camera overlay"""
         toggle_camera_overlay(not config.show_camera)
@@ -135,6 +159,16 @@ class Actions:
     def mouse_toggle_zoom_mouse():
         """Toggles zoom mouse"""
         eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
+        noise.unregister("pop",eye_zoom_mouse.zoom_mouse.on_pop)
+
+    def mouse_disable_zoom_mouse():
+        """Disable zoom mouse"""
+        eye_zoom_mouse.toggle_zoom_mouse(False)
+
+    def mouse_enable_zoom_mouse():
+        """Enable zoom mouse"""
+        eye_zoom_mouse.toggle_zoom_mouse(True)
+        noise.unregister("pop",eye_zoom_mouse.zoom_mouse.on_pop)
 
     def mouse_cancel_zoom_mouse():
         """Cancel zoom mouse if pending"""
@@ -266,16 +300,7 @@ def show_cursor_helper(show):
 
 
 def on_pop(active):
-    if gaze_job or scroll_job:
-        if setting_mouse_enable_pop_stops_scroll.get() >= 1:
-            stop_scroll()
-    elif (
-        not eye_zoom_mouse.zoom_mouse.enabled
-        and eye_mouse.mouse.attached_tracker is not None
-    ):
-        if setting_mouse_enable_pop_click.get() >= 1:
-            ctrl.mouse_click(button=0, hold=16000)
-
+    actions.user.pop()
 
 noise.register("pop", on_pop)
 
