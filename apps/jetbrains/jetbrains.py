@@ -153,12 +153,14 @@ app: jetbrains
 
 @ctx.action_class("win")
 class win_actions:
-    def file_ext():
-        title = actions.win.title()#.split(".")[-1]
-        if "java" in title:
-            return "java"
-        if "kt" in title:
-            return "kt"
+    def filename():
+        title = actions.win.title()
+        result = title.split(" ")
+        
+        for word in result:
+            if "." in word:
+                return word
+
         return ""
 
 @ctx.action_class("edit")
