@@ -10,6 +10,7 @@ nmap,N map
 under-documented,under documented
 API,a pi
 barcode,bar code
+barcode,bar coat
 data rest,that arrest
 pull request,poor request
 track scans,tracks cans
@@ -41,6 +42,7 @@ AMQP,am pu
 AMQP,am cup
 AMQP,a cup
 RabbitMQ,rabbit em cu
+RabbitMQ,rabbit him cu
 JUnit,ja unit
 whallocator,warehouse allocator
 endpoints,end points
@@ -57,6 +59,8 @@ audit,audit it
 Secaucus,sea caucus
 putaway,put away
 assert equals,assert equal
-todo,to do
 MySQL,my sequel
 SQL, sequel
+panda,pan a
+idempotent,item potent
+baywatch,bay watch
